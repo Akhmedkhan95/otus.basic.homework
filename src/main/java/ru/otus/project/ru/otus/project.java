@@ -5,11 +5,26 @@ import java.util.Scanner;
 public class project {
     public static void main(String[] args) {
         Scanner sanner = new Scanner(System.in);
-        Greetings();
-        CheckSign(3, 7, 6);
-        SelectColor(15);
-        CompareNumbers(7, 10);
-        AddOrSubtractAndPrint(18, 14, true);
+        System.out.println("Какой метод вы хотите вызвать?");
+        System.out.println("1 - Greetings");
+        System.out.println("2 - CheckSign");
+        System.out.println("3 - SelectColor");
+        System.out.println("4 - CompareNumbers");
+        System.out.println("5 - AddOrSubtractAndPrint");
+
+        int a = sanner.nextInt();
+        if (a == 1) {
+            Greetings();
+        } else if (a == 2) {
+            CheckSign((int) (Math.random() * 100), (int) (Math.random() * 100), (int) (Math.random() * 100));
+        } else if (a == 3) {
+            SelectColor((int) (Math.random() * 30));
+        } else if (a == 4) {
+            CompareNumbers((int) (Math.random() * 10), (int) (Math.random() * 10));
+        } else if (a == 5) {
+            AddOrSubtractAndPrint((int) (Math.random() * 100), (int) (Math.random() * 100), true);
+        }
+
     }
 
     public static void Greetings() {
@@ -22,18 +37,18 @@ public class project {
     public static void CheckSign(int a, int b, int c) {
         int sum = a + b + c;
         if (sum >= 0) {
-            System.out.println("Сумма положительна");
+            System.out.println("Сумма положительна  равна " + sum);
         } else {
-            System.out.println("Сумма отрицательна");
+            System.out.println("Сумма отрицательна и равна " + sum);
         }
     }
 
     public static void SelectColor(int data) {
         if (data <= 10) {
             System.out.println("Красный");
-        } else if (data > 10 && data <= 20) {
+        } else if (data <= 20) {
             System.out.println("Желтый");
-        } else if (data > 20) {
+        } else {
             System.out.println("Зеленый");
         }
     }
@@ -47,14 +62,13 @@ public class project {
     }
 
     public static void AddOrSubtractAndPrint(int initValue, int delta, boolean increment) {
+        int result;
         if (increment) {
-            int result = initValue + delta;
-            System.out.println(result);
+            result = initValue + delta;
         } else {
-            int result = initValue - delta;
-            System.out.println(result);
+            result = initValue - delta;
         }
-
+        System.out.println(result);
     }
 
 }
