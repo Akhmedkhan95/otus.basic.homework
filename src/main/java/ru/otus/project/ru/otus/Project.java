@@ -2,39 +2,39 @@ package ru.otus.project.ru.otus;
 
 import java.util.Scanner;
 
-public class project {
+public class Project {
     public static void main(String[] args) {
         Scanner sanner = new Scanner(System.in);
         System.out.println("Какой метод вы хотите вызвать?");
-        System.out.println("1 - Greetings");
-        System.out.println("2 - CheckSign");
-        System.out.println("3 - SelectColor");
-        System.out.println("4 - CompareNumbers");
-        System.out.println("5 - AddOrSubtractAndPrint");
+        System.out.println("1 - greetings");
+        System.out.println("2 - checkSign");
+        System.out.println("3 - selectColor");
+        System.out.println("4 - compareNumbers");
+        System.out.println("5 - addOrSubtractAndPrint");
 
         int a = sanner.nextInt();
         if (a == 1) {
-            Greetings();
+            greetings();
         } else if (a == 2) {
-            CheckSign((int) (Math.random() * 100), (int) (Math.random() * 100), (int) (Math.random() * 100));
+            checkSign((int) (Math.random() * 100), (int) (Math.random() * 100), (int) (Math.random() * 100));
         } else if (a == 3) {
-            SelectColor((int) (Math.random() * 30));
+            selectColor((int) (Math.random() * 30));
         } else if (a == 4) {
-            CompareNumbers((int) (Math.random() * 10), (int) (Math.random() * 10));
+            compareNumbers((int) (Math.random() * 10), (int) (Math.random() * 10));
         } else if (a == 5) {
-            AddOrSubtractAndPrint((int) (Math.random() * 100), (int) (Math.random() * 100), true);
+            addOrSubtractAndPrint((int) (Math.random() * 100), (int) (Math.random() * 100), true);
         }
 
     }
 
-    public static void Greetings() {
+    public static void greetings() {
         System.out.println("Hello");
         System.out.println("World");
         System.out.println("from");
         System.out.println("Java");
     }
 
-    public static void CheckSign(int a, int b, int c) {
+    public static void checkSign(int a, int b, int c) {
         int sum = a + b + c;
         if (sum >= 0) {
             System.out.println("Сумма положительна  равна " + sum);
@@ -43,7 +43,7 @@ public class project {
         }
     }
 
-    public static void SelectColor(int data) {
+    public static void selectColor(int data) {
         if (data <= 10) {
             System.out.println("Красный");
         } else if (data <= 20) {
@@ -53,7 +53,7 @@ public class project {
         }
     }
 
-    public static void CompareNumbers(int a, int b) {
+    public static void compareNumbers(int a, int b) {
         if (a >= b) {
             System.out.println("a>=b");
         } else {
@@ -61,7 +61,7 @@ public class project {
         }
     }
 
-    public static void AddOrSubtractAndPrint(int initValue, int delta, boolean increment) {
+    public static void addOrSubtractAndPrint(int initValue, int delta, boolean increment) {
         int result;
         if (increment) {
             result = initValue + delta;
