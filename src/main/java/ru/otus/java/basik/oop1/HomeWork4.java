@@ -1,7 +1,7 @@
 package ru.otus.java.basik.oop1;
 
 public class HomeWork4 {
-    public static void main (String[] args) {
+    public static void main(String[] args) {
         int date = 2025;
         User[] users = {
                 new User("Канторович", "Леонид", "Витальевич", 1912, "L.K.V.@mail.ru"),
@@ -16,9 +16,12 @@ public class HomeWork4 {
                 new User("Булгаков", "Михаил", "Афанасьевич", 1891, "M.B.A.@mail.ru")
         };
         for (int i = 0; i < users.length; i++) {
-            if (date - users[i].birthYear > 40) {
+            if (date - users[i].getBirthYear() > 40) {
                 users[i].info();
             }
         }
+        Box box = new Box(1000, "Коричневый");
+        box.info();
+
     }
 }
