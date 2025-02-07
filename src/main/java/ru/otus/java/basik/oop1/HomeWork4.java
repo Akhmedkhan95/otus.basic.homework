@@ -22,6 +22,5 @@ public class HomeWork4 {
         }
         Box box = new Box(1000, "Коричневый");
         box.info();
-
     }
 }

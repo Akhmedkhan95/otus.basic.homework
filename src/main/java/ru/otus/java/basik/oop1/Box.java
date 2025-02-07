@@ -4,6 +4,16 @@ public class Box {
     private int size;
     private String color;
     private boolean isOpened;
+    private String item = "";
+
+    public String getItem() {
+        return item;
+    }
+
+    public void setItem(String item) {
+        this.item = item;
+    }
+
 
     public boolean isOpened() {
         return isOpened;
@@ -28,7 +38,7 @@ public class Box {
 
     public void open() {
         if (!isOpened) {
-            System.out.println("Коробка открыта");
+            System.out.println("Открываю коробку");
             isOpened = true;
         } else {
             System.out.println("Коробка уже открыта");
@@ -37,10 +47,27 @@ public class Box {
 
     public void close() {
         if (isOpened) {
-            System.out.println("Коробка закрыта");
+            System.out.println("Закрываю коробку");
             isOpened = false;
         } else {
             System.out.println("Коробка уже закрыта");
+        }
+    }
+
+    public void put(String item) {
+        if (isOpened && this.item.equals("")) {
+            this.item = item;
+            System.out.println("Вы положили в коробку " + item);
+        } else {
+            System.out.println("Коробка закрыта или в ней нет места");
+        }
+    }
+
+    public void take () {
+        if (isOpened && !this.item.equals("")) {
+            System.out.println("Теперь в коробке есть место");
+        } else if (!isOpened) {
+            System.out.println("Коробка закрыта, сначала открой ее");
         }
     }
 
