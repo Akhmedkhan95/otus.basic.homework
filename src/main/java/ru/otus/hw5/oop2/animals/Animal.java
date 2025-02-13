@@ -1,11 +1,11 @@
 package ru.otus.hw5.oop2.animals;
 
-public abstract class Animal {
-    private String name;
-    private double speedRun;
-    private double stamina;
-    private double speedSwim;
-    private boolean tired;
+public class Animal {
+    String name;
+    double speedRun;
+    double stamina;
+    double speedSwim;
+    boolean tired;
 
     public Animal(String name, double speedRun, double stamina, double speedSwim) {
         this.name = name;
@@ -31,7 +31,9 @@ public abstract class Animal {
         return time;
     }
 
-    public abstract int costSwim ();
+    public int costSwim() {
+        return 0;
+    }
 
     public double swim (int distance) {
         int cost = costSwim() * distance;
