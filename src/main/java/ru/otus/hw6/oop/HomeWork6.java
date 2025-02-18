@@ -7,7 +7,7 @@ public class HomeWork6 {
 
         Plate plate = new Plate(40);
 
-        Cat scar = new Cat("Шрам", 20);
+        Cat scar = new Cat("Шрам", -20);
         Cat sharkhan = new Cat("Шархан", 25);
 
         Cat[] cats = {scar, sharkhan};
@@ -17,5 +17,6 @@ public class HomeWork6 {
         }
         System.out.println(plate);
         plate.addFood(70);
+        System.out.println(plate);
     }
 }

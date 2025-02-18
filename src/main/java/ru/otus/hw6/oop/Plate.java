@@ -21,9 +21,9 @@ public class Plate {
         this.currentFood = currentFood;
     }
 
-    public boolean decreaseFood (int positive) {
-        if (positive <= currentFood) {
-            currentFood -= positive;
+    public boolean decreaseFood (int amount) {
+        if (amount <= currentFood) {
+            currentFood -= amount;
             return true;
         }
         return false;
@@ -37,7 +37,7 @@ public class Plate {
     public void addFood(int amount) {
          currentFood = currentFood + amount;
          if (currentFood > maxFood) {
-             currentFood = currentFood - (currentFood - maxFood);
+             currentFood = maxFood;
          }
     }
 }

@@ -8,6 +8,9 @@ public class Cat {
     public Cat(String name, int appetite) {
         this.name = name;
         this.appetite = appetite;
+        if (this.appetite < 0) {
+            this.appetite = 0;
+        }
     }
 
     public String getName() {
