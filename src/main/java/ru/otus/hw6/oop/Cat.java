@@ -7,9 +7,10 @@ public class Cat {
 
     public Cat(String name, int appetite) {
         this.name = name;
-        this.appetite = appetite;
-        if (this.appetite < 0) {
+        if (appetite < 0) {
             this.appetite = 0;
+        } else {
+            this.appetite = appetite;
         }
     }
 

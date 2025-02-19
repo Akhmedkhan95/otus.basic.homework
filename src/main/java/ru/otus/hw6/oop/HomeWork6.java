@@ -1,13 +1,11 @@
 package ru.otus.hw6.oop;
 
-import java.util.Arrays;
-
 public class HomeWork6 {
     public static void main(String[] args) {
 
         Plate plate = new Plate(40);
 
-        Cat scar = new Cat("Шрам", -20);
+        Cat scar = new Cat("Шрам", 20);
         Cat sharkhan = new Cat("Шархан", 25);
 
         Cat[] cats = {scar, sharkhan};
@@ -16,7 +14,6 @@ public class HomeWork6 {
             System.out.println(cat);
         }
         System.out.println(plate);
-        plate.addFood(70);
-        System.out.println(plate);
+        plate.addFood(50);
     }
 }

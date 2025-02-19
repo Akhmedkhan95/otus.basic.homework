@@ -35,9 +35,14 @@ public class Plate {
     }
 
     public void addFood(int amount) {
-         currentFood = currentFood + amount;
-         if (currentFood > maxFood) {
-             currentFood = maxFood;
-         }
+        if (amount < 0) {
+            amount = 0;
+        } else {
+            currentFood = currentFood + amount;
+            if (currentFood > maxFood) {
+                currentFood = maxFood;
+            }
+        }
+
     }
 }
