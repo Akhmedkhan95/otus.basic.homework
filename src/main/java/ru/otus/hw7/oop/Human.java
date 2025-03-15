@@ -4,11 +4,9 @@ public class Human {
     private String name;
     private Transport currentTransport;
     private int stamina;
-    private boolean isSetTransport;
 
-    public Human(String name, Transport currentTransport, int stamina) {
+    public Human(String name, int stamina) {
         this.name = name;
-        this.currentTransport = currentTransport;
         this.stamina = stamina;
     }
 
@@ -28,16 +26,17 @@ public class Human {
         this.name = name;
     }
 
-    public void setTransport() {
-        isSetTransport = true;
+    public void setTransport (Transport transport) {
+        currentTransport = transport;
     }
 
-    public void outTransport() {
-        isSetTransport = false;
+    public void outTransport () {
+        currentTransport = null;
     }
+
 
     public void driving(int distance, Terrain terrain) {
-        if (isSetTransport) {
+        if (currentTransport != null) {
             if (currentTransport instanceof Bicycle) {
                 if(distance > stamina) {
                     return;
