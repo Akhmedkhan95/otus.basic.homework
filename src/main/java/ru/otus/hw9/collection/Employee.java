@@ -14,44 +14,40 @@ public class Employee {
             String name = employees.get(i).getName();
             names.add(name);
         }
-        System.out.println(names);
         return names;
     }
 
     public static List<Employee> getMaxOrEqualsAge(List<Employee> employees, int minAge) {
         ArrayList<Employee> res = new ArrayList<>();
-        for (int i = 0; i < employees.size(); i++) {
-            Employee employee = employees.get(i);
+        for (Employee employee : employees) {
             if (employee.getAge() >= minAge) {
                 res.add(employee);
             }
         }
-        System.out.println(res);
         return res;
     }
 
-    public static boolean getMinMiddleAge (List<Employee> employees, int minMidAge) {
-        int middleAge = 0;
+    public static boolean getMinMiddleAge(List<Employee> employees, int minMidAge) {
         int sumAge = 0;
         for (int i = 0; i < employees.size(); i++) {
             int age = employees.get(i).getAge();
             sumAge += age;
         }
-        middleAge = sumAge/employees.size();
+        double middleAge = (double) sumAge / employees.size();
         boolean res = middleAge > minMidAge;
-        System.out.println(res);
         return res;
     }
 
-    public static Employee getYongEmployee (List<Employee> employees) {
+    public static Employee getYongEmployee(List<Employee> employees) {
         Employee minAgeEmployee = employees.get(0);
-        for (int i = 1; i < employees.size(); i++) {
-            Employee employee = employees.get(i);
-            if (minAgeEmployee.getAge() > employee.getAge()) {
-                minAgeEmployee = employee;
+        if (employees == null || employees.isEmpty()) {
+            for (int i = 1; i < employees.size(); i++) {
+                Employee employee = employees.get(i);
+                if (minAgeEmployee.getAge() > employee.getAge()) {
+                    minAgeEmployee = employee;
+                }
             }
         }
-        System.out.println( minAgeEmployee);
         return minAgeEmployee;
     }
 
