@@ -14,6 +14,9 @@ public class PersonDataBase {
 
 
     public Person findById(Long id) {
+        if (id == null) {
+            return new Person();
+        }
         return persons.get(id);
     }
 

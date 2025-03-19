@@ -6,6 +6,9 @@ public class Person {
     private Position position;
     private Long id;
 
+    public Person() {
+    }
+
     public Person(String name, Position position, Long id) {
         this.name = name;
         this.position = position;
