@@ -9,8 +9,8 @@ public class HomeWork12 {
     public static void main(String[] args) {
         findFiles();
         String fileName = processUserInput();
-        ShowFile(fileName);
-        writeUserFile(fileName);
+        showFile(fileName);
+        writeToFile(fileName);
     }
 
     public static void findFiles() {
@@ -31,7 +31,7 @@ public class HomeWork12 {
         return UtilScanner.executeScanner();
     }
 
-    public static void ShowFile(String fileName) {
+    public static void showFile(String fileName) {
         String file = "src/main/java/ru/otus/hw12/" + fileName;
         try (InputStreamReader reader = new InputStreamReader(new FileInputStream(file))) {
             int n = reader.read();
@@ -45,15 +45,15 @@ public class HomeWork12 {
         System.out.println();
     }
 
-    public static void writeUserFile(String fileName) {
+    public static void writeToFile(String fileName) {
         String file = "src/main/java/ru/otus/hw12/" + fileName;
         System.out.println("Введите текст для записи: ");
         String userInput = UtilScanner.executeScanner();
-        try (FileOutputStream writer = new FileOutputStream(file)) {
+        try (FileOutputStream writer = new FileOutputStream(file, true)) {
             byte[] bytes = userInput.getBytes(StandardCharsets.UTF_8);
             writer.write(bytes);
         } catch (IOException e) {
-            e.printStackTrace();
+            System.out.println("Произошла ошибка при работе с файлом: " + e.getMessage());
         }
     }
 
