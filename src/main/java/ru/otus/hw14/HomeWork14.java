@@ -4,7 +4,6 @@ public class HomeWork14 {
     public static void main(String[] args) throws InterruptedException {
         double[] array = new double[100_000_000];
         long before1 = System.currentTimeMillis();
-        System.out.println(Thread.currentThread());
         for (int i = 0; i < array.length; i++) {
             array[i] = 1.14 * Math.cos(i) * Math.sin(i * 0.2) * Math.cos(i / 1.2);
         }
@@ -33,9 +32,13 @@ public class HomeWork14 {
                 array[i] = 1.14 * Math.cos(i) * Math.sin(i * 0.2) * Math.cos(i / 1.2);
             }
         });
+        thread1.start();
+        thread2.start();
+        thread3.start();
+        thread4.start();
 
         long after2 = System.currentTimeMillis();
-        System.out.println(after2 - before2 / 1000);
+        System.out.println((after2 - before2) / 1000);
 
     }
 }
