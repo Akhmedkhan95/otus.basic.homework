@@ -8,7 +8,7 @@ public class HomeWork14 {
             array[i] = 1.14 * Math.cos(i) * Math.sin(i * 0.2) * Math.cos(i / 1.2);
         }
         long after1 = System.currentTimeMillis();
-        System.out.println((after1 - before1) / 1000);
+        System.out.println(after1 - before1);
 
         long before2 = System.currentTimeMillis();
 
@@ -28,17 +28,22 @@ public class HomeWork14 {
             }
         });
         Thread thread4 = new Thread(() -> {
-            for (int i = 75_000_000; i <= 100_000_000; i++) {
+            for (int i = 75_000_000; i < 100_000_000; i++) {
                 array[i] = 1.14 * Math.cos(i) * Math.sin(i * 0.2) * Math.cos(i / 1.2);
             }
         });
+
         thread1.start();
         thread2.start();
         thread3.start();
         thread4.start();
+        thread1.join();
+        thread2.join();
+        thread3.join();
+        thread4.join();
 
         long after2 = System.currentTimeMillis();
-        System.out.println((after2 - before2) / 1000);
+        System.out.println(after2 - before2);
 
     }
 }
